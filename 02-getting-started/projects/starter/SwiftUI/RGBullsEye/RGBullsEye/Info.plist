@@ -29,10 +29,10 @@
 	<true/>
 	<key>UILaunchScreen</key>
 	<dict>
-		<key>UIImageName</key>
-		<string>rw-logo</string>
 		<key>UIColorName</key>
 		<string>rw-bg</string>
+		<key>UIImageName</key>
+		<string>rw-logo</string>
 	</dict>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
