@@ -18,7 +18,7 @@
 
 /* Begin PBXFileReference section */
 		18D775BD22AD944300AE281E /* SwiftCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		18D775C422AD944300AE281E /* SwiftCalcView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SwiftCalcView.swift; sourceTree = "<group>"; tabWidth = 2; };
+		18D775C422AD944300AE281E /* SwiftCalcView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = SwiftCalcView.swift; sourceTree = "<group>"; tabWidth = 4; };
 		18D775C622AD944400AE281E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18D775C922AD944400AE281E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		18D775CE22AD944400AE281E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -318,7 +318,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "SwiftCalc/Preview\\ Content";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5F3NR8DAZL;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftCalc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -327,7 +327,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.SwiftCalc;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.nazmul.SwiftCalc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -344,7 +344,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "SwiftCalc/Preview\\ Content";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5F3NR8DAZL;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftCalc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -353,7 +353,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.SwiftCalc;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.nazmul.SwiftCalc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
