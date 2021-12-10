@@ -32,31 +32,27 @@
 
 import SwiftUI
 
-struct ColorCircle: View {
-    let rgb: RGB
-    let size: CGFloat
+struct NeuButtonStyle: ButtonStyle {
+    let width: CGFloat
+    let height: CGFloat
     
-    var body: some View {
-        ZStack {
-            Circle()
-                .fill(Color.element)
-                .northWestShadow()
-            Circle()
-                .fill(Color(red: rgb.red, green: rgb.green, blue: rgb.blue))
-                .padding(20)
-        }
-        .frame(width: size, height: size)
-    }
-}
-
-struct ColorCircle_Previews: PreviewProvider {
-    static var previews: some View {
-        ZStack {
-            Color.element
-            ColorCircle(rgb: RGB(), size: 200)
-        }
-        .previewDevice("iPhone 11")
-        .frame(width: 300, height: 300)
-        .previewLayout(.sizeThatFits)
+    func makeBody(configuration: Configuration) -> some View {
+        return configuration.label
+            .opacity(configuration.isPressed ? 0.2 : 1)
+            .frame(width: width, height: height)
+            .background(
+                Group {
+                    if configuration.isPressed {
+                        Capsule()
+                            .fill(Color.element)
+                            .southEastShadow()
+                    } else {
+                        Capsule()
+                            .fill(Color.element)
+                            .northWestShadow()
+                    }
+                }
+            )
+            .foregroundColor(Color(UIColor.systemBlue))
     }
 }

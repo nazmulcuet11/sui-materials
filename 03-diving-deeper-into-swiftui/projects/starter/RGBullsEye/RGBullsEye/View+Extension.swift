@@ -32,31 +32,22 @@
 
 import SwiftUI
 
-struct ColorCircle: View {
-    let rgb: RGB
-    let size: CGFloat
-    
-    var body: some View {
-        ZStack {
-            Circle()
-                .fill(Color.element)
-                .northWestShadow()
-            Circle()
-                .fill(Color(red: rgb.red, green: rgb.green, blue: rgb.blue))
-                .padding(20)
-        }
-        .frame(width: size, height: size)
+extension View {
+    func northWestShadow(
+        radius: CGFloat = 16,
+        offset: CGFloat = 6
+    ) -> some View {
+        return self
+            .shadow(color: .highlight, radius: radius, x: -offset, y: -offset)
+            .shadow(color: .shadow, radius: radius, x: offset, y: offset)
     }
-}
-
-struct ColorCircle_Previews: PreviewProvider {
-    static var previews: some View {
-        ZStack {
-            Color.element
-            ColorCircle(rgb: RGB(), size: 200)
-        }
-        .previewDevice("iPhone 11")
-        .frame(width: 300, height: 300)
-        .previewLayout(.sizeThatFits)
+    
+    func southEastShadow(
+        radius: CGFloat = 16,
+        offset: CGFloat = 6
+    ) -> some View {
+        return self
+            .shadow(color: .shadow, radius: radius, x: -offset, y: -offset)
+            .shadow(color: .highlight, radius: radius, x: offset, y: offset)
     }
 }
