@@ -32,20 +32,21 @@
 
 import SwiftUI
 
-struct WelcomeView: View {
-  var body: some View {
-    ZStack {
-        WelcomeBackgroundImage()
-        WelcomeMessageView()
+struct WelcomeBackgroundImage: View {
+    var body: some View {
+        Image("welcome-background", bundle: nil)
+          .resizable()
+          .aspectRatio(1 / 1, contentMode: .fill)
+          .edgesIgnoringSafeArea(.all)
+          .saturation(0.5)
+          .blur(radius: 5)
+          .opacity(0.08)
     }
-  }
 }
 
-struct WelcomeView_Previews: PreviewProvider {
-  static var previews: some View {
-    WelcomeView()
-          .previewDevice("iPhone 11")
-  }
+struct WelcomeBackgroundImage_Previews: PreviewProvider {
+    static var previews: some View {
+        WelcomeBackgroundImage()
+            .previewDevice("iPhone 11")
+    }
 }
-
-
