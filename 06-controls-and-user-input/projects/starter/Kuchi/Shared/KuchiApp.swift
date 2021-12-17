@@ -44,5 +44,6 @@ struct KuchiApp: App {
 struct KuchiApp_Previews: PreviewProvider {
   static var previews: some View {
     WelcomeView()
+          .previewDevice("iPhone 11")
   }
 }
