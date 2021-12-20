@@ -31,5 +31,5 @@
 /// THE SOFTWARE.
 
 struct Settings: Codable {
-  var rememberUser: Bool = false
+    var rememberUser: Bool = false
 }
