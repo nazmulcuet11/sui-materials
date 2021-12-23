@@ -38,7 +38,7 @@ struct ChoicesView : View {
     let challengeTest: ChallengeTest
     @State var challengeSolved = false
     @State var isChallengeResultAlertDisplayed = false
-    @ObservedObject var challengesViewModel = ChallengesViewModel()
+    @EnvironmentObject var challengesViewModel: ChallengesViewModel
     
     var body: some View {
         VStack(spacing: 25) {
@@ -108,6 +108,7 @@ struct ChoicesView_Previews: PreviewProvider {
     static var previews: some View {
         challengesViewModel.generateRandomChallenge()
         return ChoicesView(challengeTest: challengesViewModel.currentChallenge!)
+            .environmentObject(ChallengesViewModel())
             .previewDevice("iPhone 11")
     }
 }
