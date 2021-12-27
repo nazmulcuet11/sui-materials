@@ -33,13 +33,27 @@
 import SwiftUI
 
 struct SettingsView: View {
-  @AppStorage("numberOfQuestions") var numberOfQuestions = 6
-  @State var learningEnabled = true
-  @AppStorage("dailyReminderEnabled") var dailyReminderEnabled = false
-  @State var dailyReminderTime = Date(timeIntervalSince1970: 0)
-  @AppStorage("dailyReminderTime") var dailyReminderTimeShadow: Double = 0
-  @State var cardBackgroundColor = Color.red
-  @AppStorage("appearance") var appearance: Appearance = .automatic
+  @AppStorage("numberOfQuestions")
+  var numberOfQuestions = 6
+  
+  @AppStorage("learningEnabled")
+  var learningEnabled = true
+  
+  @AppStorage("dailyReminderEnabled")
+  var dailyReminderEnabled = false
+  
+  @State
+  var dailyReminderTime = Date(timeIntervalSince1970: 0)
+  @AppStorage("dailyReminderTime")
+  var dailyReminderTimeShadow: Double = 0
+  
+  @State
+  var cardBackgroundColor = Color.red
+  @AppStorage("cardBackgroundColor")
+  var cardBackgroundColorInt: Int = 0xFF0000FF
+  
+  @AppStorage("appearance")
+  var appearance: Appearance = .automatic
   
   var body: some View {
     List {
@@ -97,23 +111,30 @@ struct SettingsView: View {
           )
             .disabled(dailyReminderEnabled == false)
         }
-        .onChange(
-          of: dailyReminderEnabled,
-          perform: { _ in
-            configureNotification()
-          }
-        )
-        .onChange(
-          of: dailyReminderTime,
-          perform: { newValue in
-            dailyReminderTimeShadow = newValue.timeIntervalSince1970
-            configureNotification()
-          }
-        )
-        .onAppear {
-          dailyReminderTime = Date(timeIntervalSince1970: dailyReminderTimeShadow)
-        }
       }
+    }
+    .onChange(
+      of: dailyReminderEnabled,
+      perform: { _ in
+        configureNotification()
+      }
+    )
+    .onChange(
+      of: dailyReminderTime,
+      perform: { newValue in
+        dailyReminderTimeShadow = newValue.timeIntervalSince1970
+        configureNotification()
+      }
+    )
+    .onChange(
+      of: cardBackgroundColor,
+      perform: { newValue in
+        cardBackgroundColorInt = newValue.asRgba
+      }
+    )
+    .onAppear {
+      dailyReminderTime = Date(timeIntervalSince1970: dailyReminderTimeShadow)
+      cardBackgroundColor = Color(rgba: cardBackgroundColorInt)
     }
   }
   

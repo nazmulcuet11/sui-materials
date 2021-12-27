@@ -1,15 +1,15 @@
 /// Copyright (c) 2021 Razeware LLC
-///
+/// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
 /// in the Software without restriction, including without limitation the rights
 /// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 /// copies of the Software, and to permit persons to whom the Software is
 /// furnished to do so, subject to the following conditions:
-///
+/// 
 /// The above copyright notice and this permission notice shall be included in
 /// all copies or substantial portions of the Software.
-///
+/// 
 /// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
 /// distribute, sublicense, create a derivative work, and/or sell copies of the
 /// Software in any work that is designed, intended, or marketed for pedagogical or
@@ -17,7 +17,7 @@
 /// or information technology.  Permission for such use, copying, modification,
 /// merger, publication, distribution, sublicensing, creation of derivative works,
 /// or sale is expressly withheld.
-///
+/// 
 /// This project and source code may use libraries or frameworks that are
 /// released under various Open-Source licenses. Use of those libraries and
 /// frameworks are governed by their own individual licenses.
@@ -32,61 +32,60 @@
 
 import SwiftUI
 
-struct HomeView: View {
-  @EnvironmentObject
-  var userManager: UserManager
+enum DiscardedDirection {
+  case left, right
+}
+
+struct DeckView: View {
+  @ObservedObject
+  var deck: FlashDeck
   
-  @EnvironmentObject
-  var challengesViewModel: ChallengesViewModel
+  @AppStorage("cardBackgroundColor")
+  var cardBackgroundColorInt: Int = 0xFF0000FF
   
-  @State
-  var selectedTab = 0
+  let onMemorized: () -> Void
   
-  @AppStorage("learningEnabled")
-  var learningEnabled: Bool = true
+  init(deck: FlashDeck, onMemorized: @escaping () -> Void) {
+    self.deck = deck
+    self.onMemorized = onMemorized
+  }
   
   var body: some View {
-    TabView(selection: $selectedTab) {
-      if learningEnabled {
-        LearnView()
-          .tabItem{
-            VStack {
-              Image(systemName: "bookmark")
-              Text("Learn")
-            }
-          }
-          .tag(0)
+    ZStack {
+      ForEach(deck.cards.filter { $0.isActive }) {
+        createCardView(for: $0)
       }
-      
-      PracticeView(
-        challengeTest: $challengesViewModel.currentChallenge,
-        userName: $userManager.profile.name,
-        numberOfAnswered: .constant(challengesViewModel.numberOfAnswered)
-      )
-        .tabItem {
-          VStack {
-            Image(systemName: "rectangle.dock")
-            Text("Challenge")
-          }
+    }
+  }
+  
+  func createCardView(for card: FlashCard) -> CardView {
+    let cardColor: Binding<Color> = Binding(
+      get: {
+        Color(rgba: cardBackgroundColorInt)
+      },
+      set: { newValue in
+        cardBackgroundColorInt = newValue.asRgba
+      }
+    )
+    
+    return CardView(
+      card,
+      cardColor: cardColor,
+      onDrag: { card, direction in
+        if direction == .left {
+          onMemorized()
         }
-        .tag(1)
-      
-      SettingsView()
-        .tabItem {
-          VStack {
-            Image(systemName: "gear")
-            Text("Settings")
-          }
-        }
-        .tag(2)
-    }.accentColor(.orange)
+      }
+    )
   }
 }
 
-struct HomeView_Previews: PreviewProvider {
+struct DeckView_Previews: PreviewProvider {
+  static let deck = FlashDeck(from: ChallengesViewModel.challenges)
   static var previews: some View {
-    HomeView()
-      .environmentObject(UserManager())
-      .environmentObject(ChallengesViewModel())
+    DeckView(
+      deck: deck,
+      onMemorized: {}
+    )
   }
 }
