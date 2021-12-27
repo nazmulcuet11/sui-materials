@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		3816D6622775E41000AAA001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3816D6612775E41000AAA001 /* SettingsView.swift */; };
 		3816D6632775E41000AAA001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3816D6612775E41000AAA001 /* SettingsView.swift */; };
+		3843E6972779F39A00A9D8B0 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3843E6962779F39A00A9D8B0 /* LearnView.swift */; };
+		3843E6982779F39A00A9D8B0 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3843E6962779F39A00A9D8B0 /* LearnView.swift */; };
 		385629702779CCD200133641 /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3856296F2779CCD200133641 /* FlashCard.swift */; };
 		385629712779CCD200133641 /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3856296F2779CCD200133641 /* FlashCard.swift */; };
-		385629722779CCDC00133641 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38758EF22779C37D002DF773 /* LearnView.swift */; };
 		385629742779CE3E00133641 /* FlashDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385629732779CE3E00133641 /* FlashDeck.swift */; };
 		385629752779CE3E00133641 /* FlashDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385629732779CE3E00133641 /* FlashDeck.swift */; };
 		385629772779CECA00133641 /* LearningStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385629762779CECA00133641 /* LearningStore.swift */; };
@@ -20,7 +21,6 @@
 		3856297B2779D00500133641 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385629792779D00500133641 /* CardView.swift */; };
 		3856297D2779D14400133641 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3856297C2779D14400133641 /* DeckView.swift */; };
 		3856297E2779D14400133641 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3856297C2779D14400133641 /* DeckView.swift */; };
-		38758EF32779C37D002DF773 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38758EF22779C37D002DF773 /* LearnView.swift */; };
 		57211E7F26F69C9500F99E16 /* ChoicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57211E7826F69C9500F99E16 /* ChoicesView.swift */; };
 		57211E8026F69C9500F99E16 /* ChoicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57211E7826F69C9500F99E16 /* ChoicesView.swift */; };
 		57211E8126F69C9500F99E16 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57211E7926F69C9500F99E16 /* QuestionView.swift */; };
@@ -81,12 +81,12 @@
 
 /* Begin PBXFileReference section */
 		3816D6612775E41000AAA001 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		3843E6962779F39A00A9D8B0 /* LearnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
 		3856296F2779CCD200133641 /* FlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
 		385629732779CE3E00133641 /* FlashDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashDeck.swift; sourceTree = "<group>"; };
 		385629762779CECA00133641 /* LearningStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningStore.swift; sourceTree = "<group>"; };
 		385629792779D00500133641 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		3856297C2779D14400133641 /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
-		38758EF22779C37D002DF773 /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LearnView.swift; path = ../../../../../../../../../../../../Desktop/LearnView.swift; sourceTree = "<group>"; };
 		57211E7826F69C9500F99E16 /* ChoicesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoicesView.swift; sourceTree = "<group>"; };
 		57211E7926F69C9500F99E16 /* QuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		57211E7A26F69C9500F99E16 /* CongratulationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratulationsView.swift; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		38758EF12779C36A002DF773 /* Learnn */ = {
+		38758EF12779C36A002DF773 /* Learn */ = {
 			isa = PBXGroup;
 			children = (
 				3856296F2779CCD200133641 /* FlashCard.swift */,
@@ -156,9 +156,9 @@
 				385629762779CECA00133641 /* LearningStore.swift */,
 				385629792779D00500133641 /* CardView.swift */,
 				3856297C2779D14400133641 /* DeckView.swift */,
-				38758EF22779C37D002DF773 /* LearnView.swift */,
+				3843E6962779F39A00A9D8B0 /* LearnView.swift */,
 			);
-			path = Learnn;
+			path = Learn;
 			sourceTree = "<group>";
 		};
 		57211E7726F69C9500F99E16 /* Practice */ = {
@@ -251,7 +251,7 @@
 		57EF33FF24E89F91004ABEB2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				38758EF12779C36A002DF773 /* Learnn */,
+				38758EF12779C36A002DF773 /* Learn */,
 				3816D6602775E3F900AAA001 /* Settings */,
 				57211E7726F69C9500F99E16 /* Practice */,
 				576942A326EF720D004B8191 /* Profile */,
@@ -405,7 +405,6 @@
 				3856297A2779D00500133641 /* CardView.swift in Sources */,
 				57B2C1D826F80430002ABD0A /* ScoreView.swift in Sources */,
 				57211E8526F69C9500F99E16 /* ChallengesViewModel.swift in Sources */,
-				38758EF32779C37D002DF773 /* LearnView.swift in Sources */,
 				57AD7DB226F15F70007A84C5 /* WelcomeMessageView.swift in Sources */,
 				579CB98B26EA1BE30009C09F /* WelcomeView.swift in Sources */,
 				57F8DD6926EEC01300153B9F /* HorizontallyAlignedLabelStyle.swift in Sources */,
@@ -417,6 +416,7 @@
 				57211E8926F69C9500F99E16 /* ChallengeView.swift in Sources */,
 				576942A726EF720D004B8191 /* UserManager.swift in Sources */,
 				57211E7F26F69C9500F99E16 /* ChoicesView.swift in Sources */,
+				3843E6972779F39A00A9D8B0 /* LearnView.swift in Sources */,
 				57211E8F26F69C9F00F99E16 /* HistoryView.swift in Sources */,
 				57211E8B26F69C9500F99E16 /* ChoicesRow.swift in Sources */,
 				57578FDE24E9D943003465A4 /* HomeView.swift in Sources */,
@@ -448,7 +448,6 @@
 				385629712779CCD200133641 /* FlashCard.swift in Sources */,
 				579CB98C26EA1BE30009C09F /* WelcomeView.swift in Sources */,
 				57F8DD6A26EEC01300153B9F /* HorizontallyAlignedLabelStyle.swift in Sources */,
-				385629722779CCDC00133641 /* LearnView.swift in Sources */,
 				576942AC26EF720D004B8191 /* Settings.swift in Sources */,
 				57211E8426F69C9500F99E16 /* CongratulationsView.swift in Sources */,
 				57211E8226F69C9500F99E16 /* QuestionView.swift in Sources */,
@@ -456,6 +455,7 @@
 				57211E9226F69C9F00F99E16 /* StarterView.swift in Sources */,
 				57211E8A26F69C9500F99E16 /* ChallengeView.swift in Sources */,
 				576942A826EF720D004B8191 /* UserManager.swift in Sources */,
+				3843E6982779F39A00A9D8B0 /* LearnView.swift in Sources */,
 				57211E8026F69C9500F99E16 /* ChoicesView.swift in Sources */,
 				57211E9026F69C9F00F99E16 /* HistoryView.swift in Sources */,
 				57211E8C26F69C9500F99E16 /* ChoicesRow.swift in Sources */,
