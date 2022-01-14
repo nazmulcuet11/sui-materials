@@ -34,9 +34,9 @@ import SwiftUI
 
 @main
 struct MountainAirport: App {
-  var body: some Scene {
-    WindowGroup {
-      WelcomeView()
+    var body: some Scene {
+        WindowGroup {
+            WelcomeView()
+        }
     }
-  }
 }
